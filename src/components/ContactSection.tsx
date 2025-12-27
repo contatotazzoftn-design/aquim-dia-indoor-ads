@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Clock, MapPin, Gift, Headphones } from "lucide-react";
 
 const ContactSection = () => {
-  const whatsappLink = "https://wa.me/5515999999999?text=Olá! Gostaria de uma consultoria gratuita sobre mídia indoor.";
+  const whatsappLink = "https://wa.me/5515981001101?text=Olá! Gostaria de anunciar.";
 
   const features = [
     {
