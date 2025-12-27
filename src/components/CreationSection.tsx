@@ -1,9 +1,10 @@
-import { Palette, Zap, Phone, Target } from "lucide-react";
+import { Paintbrush, Zap, Phone, Target, Camera, Clock, Grid2X2 } from "lucide-react";
+import electricianImage from "@/assets/electrician-maintenance.jpg";
 
 const CreationSection = () => {
   const features = [
     {
-      icon: Palette,
+      icon: Paintbrush,
       title: "Design Profissional",
       description: "Artes criadas por designers especializados em mídia digital",
     },
@@ -48,10 +49,10 @@ const CreationSection = () => {
               {features.map((feature, index) => (
                 <div
                   key={feature.title}
-                  className="flex items-start gap-3 p-4 rounded-xl bg-secondary/50 animate-fade-in-up"
+                  className="flex items-start gap-3 p-4 rounded-xl bg-secondary/50 border border-border/50 animate-fade-in-up"
                   style={{ animationDelay: `${(index + 2) * 100}ms` }}
                 >
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
                     <feature.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -63,7 +64,7 @@ const CreationSection = () => {
             </div>
           </div>
 
-          {/* Right - Example Visual */}
+          {/* Right - Example Visual with Electrician */}
           <div className="animate-slide-in-right animation-delay-200">
             <div className="glass-card-elevated p-6 md:p-8 rounded-3xl">
               <div className="text-center mb-6">
@@ -71,20 +72,27 @@ const CreationSection = () => {
                 <h3 className="text-xl font-bold">Segmento: Eletricista</h3>
               </div>
 
-              {/* Mock ad preview */}
-              <div className="aspect-video rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 p-6 flex flex-col justify-between relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="relative z-10">
-                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-xs font-medium backdrop-blur-sm">
+              {/* Mock ad preview with electrician image */}
+              <div className="aspect-video rounded-2xl overflow-hidden relative">
+                <img 
+                  src={electricianImage} 
+                  alt="Eletricista fazendo manutenção predial"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="inline-block px-3 py-1 rounded-full bg-amber-500/90 text-white text-xs font-medium backdrop-blur-sm">
                     ⚡ Serviços Elétricos
                   </span>
                 </div>
-                <div className="relative z-10 text-white">
+                
+                <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
                   <h4 className="text-2xl md:text-3xl font-black mb-2">João Eletricista</h4>
                   <p className="text-white/80 text-sm mb-3">Instalações, manutenções e reparos elétricos</p>
-                  <div className="flex items-center gap-4 text-sm">
+                  <div className="flex items-center gap-4 text-sm flex-wrap">
                     <span className="font-bold">📞 (15) 99999-9999</span>
-                    <span className="px-3 py-1 rounded-full bg-white text-orange-600 font-bold text-xs">
+                    <span className="px-3 py-1 rounded-full bg-primary text-white font-bold text-xs">
                       LIGUE AGORA
                     </span>
                   </div>
@@ -92,9 +100,18 @@ const CreationSection = () => {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3 justify-center">
-                <span className="px-3 py-1.5 rounded-full bg-secondary text-sm">📸 Fotos reais</span>
-                <span className="px-3 py-1.5 rounded-full bg-secondary text-sm">⏱️ 15 segundos</span>
-                <span className="px-3 py-1.5 rounded-full bg-secondary text-sm">📱 Contato visível</span>
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-sm">
+                  <Camera className="w-4 h-4 text-muted-foreground" />
+                  Fotos reais
+                </span>
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-sm">
+                  <Clock className="w-4 h-4 text-muted-foreground" />
+                  15 segundos
+                </span>
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-sm">
+                  <Grid2X2 className="w-4 h-4 text-muted-foreground" />
+                  Contato visível
+                </span>
               </div>
             </div>
           </div>

@@ -1,34 +1,80 @@
 import { Pill, Coffee, Dumbbell, ShoppingCart, Ticket } from "lucide-react";
+import { useCountUp } from "@/hooks/useCountUp";
+
+const CountUpCard = ({ 
+  icon: Icon, 
+  name, 
+  reach, 
+  description, 
+  color, 
+  index,
+  isNumber = true
+}: {
+  icon: any;
+  name: string;
+  reach: number | string;
+  description: string;
+  color: string;
+  index: number;
+  isNumber?: boolean;
+}) => {
+  const { count, ref, displayValue } = useCountUp({ 
+    end: typeof reach === 'number' ? reach : 0, 
+    duration: 2000,
+    prefix: '+',
+  });
+
+  return (
+    <div
+      ref={ref}
+      className={`glass-card p-6 text-center group hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 animate-fade-in-up`}
+      style={{ animationDelay: `${(index + 1) * 100}ms` }}
+    >
+      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+        <Icon className="w-8 h-8 text-white" />
+      </div>
+      <h3 className="text-lg font-bold mb-2">{name}</h3>
+      <div className="text-3xl font-black gradient-text mb-1">
+        {isNumber ? displayValue : reach}
+      </div>
+      <p className="text-muted-foreground text-sm">{description}</p>
+    </div>
+  );
+};
 
 const LocationsSection = () => {
   const locations = [
     {
       icon: Pill,
       name: "Farmácias",
-      reach: "+100",
+      reach: 300,
       description: "pessoas/dia",
       color: "from-green-500 to-emerald-600",
+      isNumber: true,
     },
     {
       icon: Coffee,
       name: "Padarias",
-      reach: "+300",
+      reach: 600,
       description: "pessoas/dia",
       color: "from-amber-500 to-orange-600",
+      isNumber: true,
     },
     {
       icon: Dumbbell,
       name: "Academias",
-      reach: "+200",
+      reach: 350,
       description: "pessoas/dia",
       color: "from-blue-500 to-cyan-600",
+      isNumber: true,
     },
     {
       icon: ShoppingCart,
       name: "Supermercados",
-      reach: "+1000",
+      reach: 1000,
       description: "pessoas/dia",
       color: "from-red-500 to-rose-600",
+      isNumber: true,
     },
     {
       icon: Ticket,
@@ -36,6 +82,8 @@ const LocationsSection = () => {
       reach: "Alto",
       description: "tempo de espera",
       color: "from-primary to-purple-light",
+      isNumber: false,
+      extraDescription: "Atenção total às telas durante a espera"
     },
   ];
 
@@ -56,18 +104,16 @@ const LocationsSection = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {locations.map((location, index) => (
-            <div
+            <CountUpCard
               key={location.name}
-              className={`glass-card p-6 text-center group hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 animate-fade-in-up`}
-              style={{ animationDelay: `${(index + 1) * 100}ms` }}
-            >
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${location.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                <location.icon className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">{location.name}</h3>
-              <div className="text-3xl font-black gradient-text mb-1">{location.reach}</div>
-              <p className="text-muted-foreground text-sm">{location.description}</p>
-            </div>
+              icon={location.icon}
+              name={location.name}
+              reach={location.reach}
+              description={location.description}
+              color={location.color}
+              index={index}
+              isNumber={location.isNumber}
+            />
           ))}
         </div>
 
