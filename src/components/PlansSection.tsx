@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Check, Star, ArrowRight } from "lucide-react";
 
 const PlansSection = () => {
-  const whatsappBase = "https://wa.me/5515999999999?text=";
+  const whatsappBase = "https://wa.me/5515981001101?text=";
 
   const plans = [
     {
