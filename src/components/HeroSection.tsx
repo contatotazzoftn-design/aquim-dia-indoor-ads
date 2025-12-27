@@ -1,6 +1,6 @@
 import heroMockup from "@/assets/hero-mockup.png";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   const whatsappLink = "https://wa.me/5515999999999?text=Olá! Gostaria de saber mais sobre mídia indoor.";
@@ -42,19 +42,13 @@ const HeroSection = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button variant="whatsapp" size="xl" asChild>
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Falar com especialista
-                </a>
-              </Button>
             </div>
 
             {/* Trust indicators */}
             <div className="flex flex-wrap gap-6 justify-center lg:justify-start text-sm text-muted-foreground animate-fade-in-up animation-delay-500">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-                <span>+50 telas ativas</span>
+                <span>3 telas ativas</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
