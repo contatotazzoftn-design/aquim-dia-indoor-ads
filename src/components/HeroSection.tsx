@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
-  const whatsappLink = "https://wa.me/5515999999999?text=Olá! Gostaria de saber mais sobre mídia indoor.";
+  const whatsappLink = "https://wa.me/5515981001101?text=Ol%C3%A1!%20Gostaria%20de%20anunciar.";
 
   return (
     <section className="relative min-h-screen flex items-center section-padding overflow-hidden">
