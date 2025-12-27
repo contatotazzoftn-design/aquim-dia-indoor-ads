@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 const FinalCTASection = () => {
-  const whatsappLink = "https://wa.me/5515999999999?text=Olá! Quero começar minha campanha de mídia indoor.";
+  const whatsappLink = "https://wa.me/5515981001101?text=Ol%C3%A1!%20Gostaria%20de%20anunciar.";
 
   return (
     <section className="section-padding relative overflow-hidden">
