@@ -88,10 +88,10 @@ const CreationSection = () => {
                 </div>
                 
                 <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
-                  <h4 className="text-2xl md:text-3xl font-black mb-2">João Eletricista</h4>
+                  <h4 className="text-2xl md:text-3xl font-black mb-2">Saulo Eletricista</h4>
                   <p className="text-white/80 text-sm mb-3">Instalações, manutenções e reparos elétricos</p>
                   <div className="flex items-center gap-4 text-sm flex-wrap">
-                    <span className="font-bold">📞 (15) 99999-9999</span>
+                    <span className="font-bold">📞 (15) 996527272</span>
                     <span className="px-3 py-1 rounded-full bg-primary text-white font-bold text-xs">
                       LIGUE AGORA
                     </span>
