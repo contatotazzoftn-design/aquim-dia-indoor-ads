@@ -2,7 +2,7 @@ import { Instagram, MessageCircle, Facebook } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const whatsappLink = "https://wa.me/5515999999999?text=Olá! Gostaria de saber mais sobre mídia indoor.";
+  const whatsappLink = "https://wa.me/5515981001101?text=Ol%C3%A1!%20Gostaria%20de%20anunciar.";
 
   return (
     <footer className="section-padding bg-card border-t border-border">
